@@ -1,5 +1,6 @@
 import math
 import unittest
+import datetime
 
 
 def area(r):
@@ -61,4 +62,7 @@ class CircleTestCase(unittest.TestCase):
         self.success_message("perimeter(\"4\")", str(perimeter("4")))
     
     def success_message(self, func, output):
-        print(self._testMethodName + " passed >> " + str(func) + " >> " + str(output))
+        print(datetime.datetime.now().strftime('%d-%m-%Y'), end=" ")
+        print(datetime.datetime.now().time().isoformat()[:8], end=": ")
+        print(self._testMethodName +
+               " passed => " + str(func) + " >> " + str(output))

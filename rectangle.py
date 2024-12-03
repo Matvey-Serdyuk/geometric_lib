@@ -1,4 +1,6 @@
 import unittest
+import unittest
+import datetime
 
 
 def area(a, b):
@@ -58,4 +60,7 @@ class RectangleTestCase(unittest.TestCase):
         self.success_message("perimeter(\"5\", 6)", 22)
     
     def success_message(self, func, output):
-        print(self._testMethodName + " passed >> " + str(func) + " >> " + str(output))
+        print(datetime.datetime.now().strftime('%d-%m-%Y'), end=" ")
+        print(datetime.datetime.now().time().isoformat()[:8], end=": ")
+        print(self._testMethodName +
+               " passed => " + str(func) + " >> " + str(output))
